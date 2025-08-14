@@ -47,8 +47,10 @@ export default function Home() {
 
           <div className="space-y-6">
             <LinkCard title="Core Channels" links={coreLinks} />
-            <LinkCard title="cryptoSI" description="Host & Analyst" links={cryptoSILinks} />
-            <LinkCard title="The Financial Navigator" description="Host & Analyst" links={financialNavigatorLinks} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <LinkCard title="cryptoSI" description="Host & Analyst" links={cryptoSILinks} />
+              <LinkCard title="The Financial Navigator" description="Host & Analyst" links={financialNavigatorLinks} />
+            </div>
           </div>
           
           <footer className="text-center text-sm text-muted-foreground">
