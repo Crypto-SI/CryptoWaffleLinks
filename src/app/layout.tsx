@@ -3,8 +3,8 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "Finance Hub Links",
-  description: "All your important financial links in one place.",
+  title: "CryptoWaffle Links",
+  description: "All your important CryptoWaffle links in one place.",
 };
 
 export default function RootLayout({

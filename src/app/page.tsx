@@ -33,12 +33,12 @@ export default function Home() {
         <div className="w-full max-w-2xl space-y-8">
           <header className="flex flex-col items-center space-y-4 text-center">
             <Avatar className="h-24 w-24 border-4 border-card shadow-lg">
-              <AvatarImage src="https://placehold.co/100x100.png" alt="Finance Hub" data-ai-hint="logo finance" />
-              <AvatarFallback>FH</AvatarFallback>
+              <AvatarImage src="https://placehold.co/100x100.png" alt="CryptoWaffle Links" data-ai-hint="logo crypto" />
+              <AvatarFallback>CW</AvatarFallback>
             </Avatar>
             <div>
               <h1 className="text-5xl font-bold font-headline text-foreground">
-                Finance Hub
+                CryptoWaffle Links
               </h1>
               <p className="text-lg text-muted-foreground">Your one-stop hub for all our content.</p>
             </div>
@@ -52,7 +52,7 @@ export default function Home() {
           </div>
           
           <footer className="text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Finance Hub. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} CryptoWaffle. All Rights Reserved.</p>
           </footer>
         </div>
       </main>
