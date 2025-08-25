@@ -5,6 +5,11 @@ import { Toaster } from "@/components/ui/toaster";
 export const metadata: Metadata = {
   title: "CryptoWaffle Links",
   description: "All your important CryptoWaffle links in one place.",
+  icons: {
+    icon: "/images/100x100.png",
+    shortcut: "/images/100x100.png",
+    apple: "/images/100x100.png",
+  },
 };
 
 export default function RootLayout({

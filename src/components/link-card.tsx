@@ -18,11 +18,12 @@ type Link = {
 type LinkCardProps = {
   title: string;
   description?: string;
-  links: Link[];
+  links?: Link[];
+  children?: React.ReactNode;
   className?: string;
 };
 
-export function LinkCard({ title, description, links, className }: LinkCardProps) {
+export function LinkCard({ title, description, links, children, className }: LinkCardProps) {
   return (
     <Card className={cn("w-full overflow-hidden rounded-2xl border-2 border-primary/20 bg-card/80 backdrop-blur-sm shadow-xl", className)}>
       <CardHeader>
@@ -32,25 +33,29 @@ export function LinkCard({ title, description, links, className }: LinkCardProps
         )}
       </CardHeader>
       <CardContent>
-        <div className="flex flex-col space-y-4">
-          {links.map((link, index) => (
-            <Button
-              key={index}
-              asChild
-              variant="secondary"
-              className="h-14 transform-gpu justify-start gap-4 px-4 text-base transition-transform duration-200 hover:scale-105 hover:bg-accent hover:text-accent-foreground active:scale-100"
-            >
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+        {children ? (
+          children
+        ) : (
+          <div className="flex flex-col space-y-4">
+            {links?.map((link, index) => (
+              <Button
+                key={index}
+                asChild
+                variant="secondary"
+                className="h-14 transform-gpu justify-start gap-4 px-4 text-base transition-transform duration-200 hover:scale-105 hover:bg-accent hover:text-accent-foreground active:scale-100"
               >
-                {link.icon}
-                <span className="flex-grow text-left">{link.text}</span>
-              </a>
-            </Button>
-          ))}
-        </div>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.icon}
+                  <span className="flex-grow text-left">{link.text}</span>
+                </a>
+              </Button>
+            ))}
+          </div>
+        )}
       </CardContent>
     </Card>
   );
