@@ -1,7 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LinkCard } from "@/components/link-card";
+import { FlipCard } from "@/components/flip-card";
 import { Greeting } from "@/components/greeting";
-import { ArrowLeft, Globe, Twitter, Youtube, Handshake } from "lucide-react";
+import { ArrowLeft, Globe, Twitter, Youtube, Handshake, Instagram } from "lucide-react";
 import { TelegramIcon } from "@/components/icons/telegram-icon";
 import { WaffleIcon } from "@/components/icons/waffle-icon";
 import { YouTubeChannels } from "@/components/youtube-channels";
@@ -14,13 +15,15 @@ const coreLinks = [
 ];
 
 const cryptoSILinks = [
-  { href: "https://twitter.com/crypto_si", text: "Twitter", icon: <Twitter className="h-6 w-6 fill-current" /> },
-  { href: "https://t.me/Crypto_SI", text: "Telegram", icon: <TelegramIcon className="h-6 w-6" /> },
+  { href: "https://twitter.com/crypto_si", text: "Twitter", icon: <Twitter className="h-5 w-5 fill-current" /> },
+  { href: "https://t.me/Crypto_SI", text: "Telegram", icon: <TelegramIcon className="h-5 w-5" /> },
+  { href: "https://www.instagram.com/cryptosi.eth/", text: "Instagram", icon: <Instagram className="h-5 w-5" /> },
 ];
 
 const financialNavigatorLinks = [
-  { href: "https://x.com/Alex_Codling_", text: "Twitter", icon: <Twitter className="h-6 w-6 fill-current" /> },
-  { href: "https://t.me/Alex_Codling", text: "Telegram", icon: <TelegramIcon className="h-6 w-6" /> },
+  { href: "https://x.com/Alex_Codling_", text: "Twitter", icon: <Twitter className="h-5 w-5 fill-current" /> },
+  { href: "https://t.me/Alex_Codling", text: "Telegram", icon: <TelegramIcon className="h-5 w-5" /> },
+  { href: "https://www.instagram.com/financial_navigator_/", text: "Instagram", icon: <Instagram className="h-5 w-5" /> },
 ];
 
 const partnerLinks = [
@@ -45,7 +48,7 @@ export default function Home() {
         </a>
       </div>
       <main className="flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-6 lg:p-8 font-body">
-        <div className="w-full max-w-2xl space-y-8">
+        <div className="w-full max-w-2xl space-y-8 overflow-visible">
           <header className="flex flex-col items-center space-y-4 text-center">
             <Avatar className="h-24 w-24 border-4 border-card shadow-lg overflow-hidden">
               <AvatarImage 
@@ -64,16 +67,16 @@ export default function Home() {
             <Greeting />
           </header>
 
-          <div className="space-y-6">
+          <div className="space-y-6 overflow-visible">
             <LinkCard title="Core Channels" links={coreLinks} />
             <LinkCard title="YouTube Channels" className="overflow-visible">
               <YouTubeChannels />
             </LinkCard>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <LinkCard title="cryptoSI" description="Host & Analyst" links={cryptoSILinks} />
-              <LinkCard title="The Financial Navigator" description="Host & Analyst" links={financialNavigatorLinks} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative isolate mb-16 overflow-visible z-10">
+              <FlipCard title="CryptoSI" description="Host & Analyst" links={cryptoSILinks} image="/images/Cryptosi.jpg" />
+              <FlipCard title="The Financial Navigator" description="Host & Analyst" links={financialNavigatorLinks} image="/images/nav.png" />
             </div>
-            <LinkCard title="Partners" links={partnerLinks} />
+            <LinkCard title="Partners" links={partnerLinks} className="relative z-0" />
           </div>
           
           <footer className="text-center text-sm text-muted-foreground">

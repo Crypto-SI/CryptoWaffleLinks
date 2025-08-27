@@ -37,6 +37,12 @@
     --sidebar-accent-foreground: 222.2 84% 4.9%;
     --sidebar-border: 214.3 31.8% 91.4%;
     --sidebar-ring: 214 78% 46%;
+    
+    /* FlipCard 3D Transform and Z-Index Custom Properties */
+    --flip-card-perspective: 1000px;
+    --flip-card-z-base: 0;
+    --flip-card-z-elevated: 50;
+    --flip-card-spacing: 2rem;
   }
   .dark {
     --background: 222.2 84% 4.9%;
@@ -71,6 +77,12 @@
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 217.2 32.6% 17.5%;
     --sidebar-ring: 214 78% 46%;
+    
+    /* FlipCard 3D Transform and Z-Index Custom Properties */
+    --flip-card-perspective: 1000px;
+    --flip-card-z-base: 0;
+    --flip-card-z-elevated: 50;
+    --flip-card-spacing: 2rem;
   }
 }
 
@@ -80,5 +92,41 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  /* 3D Transform Utilities */
+  .perspective-1000 {
+    perspective: var(--flip-card-perspective);
+  }
+  
+  .isolate {
+    isolation: isolate;
+  }
+  
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  /* Custom Z-Index Utilities */
+  .z-flip-base {
+    z-index: var(--flip-card-z-base);
+  }
+  
+  .z-flip-elevated {
+    z-index: var(--flip-card-z-elevated);
   }
 }
